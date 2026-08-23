@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#080808" />
+    <meta name="description" content="Tarjeta digital de La Casa del Marisco Restaurant." />
+    <title>La Casa del Marisco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="brand-overrides.css" />
+    <link rel="stylesheet" href="connections.css" />
+    <link rel="stylesheet" href="phase5.css" />
+    <link rel="stylesheet" href="phase6.css" />
+    <link rel="stylesheet" href="phase7.css" />
+    <link rel="stylesheet" href="phase8.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <header class="topbar" aria-label="Cabecera principal" data-i18n-aria="mainHeader">
+      <button class="icon-button" id="menu-toggle" aria-label="Abrir navegación" data-i18n-aria="openNavigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="brand" href="#inicio" aria-label="La Casa del Marisco, inicio">
+        <img class="brand-logo" src="assets/images/logo-menu.png" alt="" />
+        <span><strong>La Casa del Marisco</strong><small>RESTAURANT</small></span>
+      </a>
+      <div class="language-switch" role="group" aria-label="Idioma" data-i18n-aria="languageLabel">
+        <button data-lang="es" class="active" aria-pressed="true">🇪🇨 ES</button>
+        <button data-lang="en" aria-pressed="false">🇺🇸 EN</button>
+      </div>
+    </header>
+
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer-close" id="drawer-close" aria-label="Cerrar navegación" data-i18n-aria="closeNavigation">×</button>
+      <p class="eyebrow">La Casa del Marisco</p>
+      <nav>
+        <a href="#inicio" data-i18n="home">Inicio</a>
+        <a href="#menu" data-i18n="menu">Menú</a>
+        <a href="ordenar/" data-i18n="order">Ordenar</a>
+        <a href="#horarios" data-i18n="hours">Horarios</a>
+        <a href="#contacto" data-i18n="contact">Contacto</a>
+      </nav>
+    </aside>
+    <button class="drawer-backdrop" id="drawer-backdrop" aria-label="Cerrar navegación" tabindex="-1"></button>
+
+    <main>
+      <section class="hero" id="inicio">
+        <img class="hero-photo" src="assets/images/hero-seafood.jpg" alt="Composición promocional de mariscos" data-i18n-alt="heroAlt" fetchpriority="high" />
+        <div class="hero-shade"></div>
+        <img class="hero-logo" src="assets/brand/logo-la-casa-del-marisco-transparent.png" alt="La Casa del Marisco Restaurant" />
+        <div class="hero-copy">
+          <p class="eyebrow">Una experiencia del mar</p>
+          <h1 data-i18n="welcome">Bienvenidos</h1>
+          <p class="hero-tagline" data-i18n="tagline">SABOR <i></i> FRESCURA <i></i> TRADICIÓN</p>
+        </div>
+      </section>
+
+      <section class="action-panel" aria-label="Acciones principales" data-i18n-aria="mainActions">
+        <div class="primary-actions">
+          <a class="action-card gold" href="#menu"><span class="action-icon">♨</span><span><strong data-i18n="menu">MENÚ</strong><small data-i18n="viewMenu">Ver nuestros platos</small></span></a>
+          <a class="action-card" id="reservation-link" target="_blank" rel="noopener noreferrer"><span class="action-icon">▣</span><span><strong data-i18n="reserve">RESERVAR</strong><small data-i18n="yourTable">Tu mesa</small></span></a>
+        </div>
+        <div class="secondary-actions">
+          <a class="mini-action" href="ordenar/"><span>🛵</span><strong data-i18n="orderWhatsapp">ORDENAR POR WHATSAPP</strong><small>Delivery / Pickup</small></a>
+          <a class="mini-action" id="directions-link" target="_blank" rel="noopener noreferrer"><span>⌖</span><strong data-i18n="directions">DIRECCIONES</strong><small data-i18n="getDirections">Cómo llegar</small></a>
+          <button class="mini-action" id="reviews-link"><span>☆</span><strong data-i18n="reviews">RESEÑAS</strong><small data-i18n="leaveOpinion">Déjanos tu opinión</small></button>
+          <a class="mini-action" href="tel:+593967850030"><span>☎</span><strong data-i18n="callUs">LLÁMANOS</strong><small>096 785 0030</small></a>
+          <a class="mini-action" id="general-whatsapp" target="_blank" rel="noopener noreferrer"><span>◉</span><strong>WHATSAPP</strong><small data-i18n="contactUs">Contáctanos</small></a>
+          <button class="mini-action" data-placeholder="website"><span>◎</span><strong data-i18n="website">SITIO WEB</strong><small data-i18n="moreInfo">Más información</small></button>
+        </div>
+      </section>
+
+      <section class="section gallery-section" aria-labelledby="gallery-title">
+        <div class="section-heading"><p class="eyebrow" data-i18n="fromSea">Del mar a tu mesa</p><h2 id="gallery-title" data-i18n="gallery">Galería</h2></div>
+        <div class="gallery-grid">
+          <figure><img src="assets/images/gallery-shrimp.jpg" alt="Plato de camarones de La Casa del Marisco" data-i18n-alt="shrimpAlt" loading="lazy" /></figure>
+          <figure><img src="assets/images/gallery-crab.jpg" alt="Plato de cangrejo de La Casa del Marisco" data-i18n-alt="crabAlt" loading="lazy" /></figure>
+          <figure><img src="assets/images/gallery-soup.jpg" alt="Sopa marinera de La Casa del Marisco" data-i18n-alt="soupAlt" loading="lazy" /></figure>
+        </div>
+        <div class="social-row" aria-label="Redes sociales" data-i18n-aria="socialNetworks">
+          <a id="instagram-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><span class="social-icon instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="social-dot" cx="17.4" cy="6.7" r="1"/></svg></span></a>
+          <a id="facebook-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><span class="social-icon facebook-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.2 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.2H8v3.1h2.8v8h3.4z"/></svg></span></a>
+          <a id="tiktok-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><span class="social-icon tiktok-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.5 3c.3 2 1.4 3.3 3.5 3.5v3.1c-1.3 0-2.5-.3-3.5-1v6.1a6.2 6.2 0 1 1-5.4-6.1v3.2a3 3 0 1 0 2.2 2.9V3h3.2z"/></svg></span></a>
+        </div>
+      </section>
+
+      <section class="section order-cta" id="menu" aria-labelledby="order-title">
+        <p class="eyebrow" data-i18n="orderEyebrow">Tu sabor favorito, a un toque</p>
+        <h2 id="order-title" data-i18n="orderHere">ORDENA AQUÍ</h2>
+        <p data-i18n="orderCtaText">Arma tu pedido y envíalo directamente por WhatsApp</p>
+        <a class="order-cta-button" href="/ordenar/" data-i18n="orderNow">🛵 ORDENAR AHORA</a>
+        <small>Pickup <i></i> Delivery <i></i> WhatsApp</small>
+      </section>
+
+      <section class="section reviews-section" aria-labelledby="reviews-title">
+        <p class="eyebrow" data-i18n="customerExperience">La experiencia de nuestros clientes</p>
+        <div class="reviews-rating"><span aria-hidden="true">★</span><strong id="google-rating">4.1</strong><small data-i18n="onGoogle">en Google</small></div>
+        <h2 id="reviews-title"><span id="google-review-count">518</span> <span data-i18n="reviewWord">reseñas</span></h2>
+        <p data-i18n="feedbackHelps">Tu opinión nos ayuda a seguir mejorando.</p>
+        <a class="reviews-button" id="google-review-button" target="_blank" rel="noopener noreferrer" data-i18n="leaveReview">⭐ DEJA TU RESEÑA</a>
+      </section>
+
+      <section class="section info-grid" id="horarios">
+        <article class="info-card"><div class="status-row"><p class="eyebrow" data-i18n="hereForYou">Estamos para servirte</p><span class="open-status" id="open-status"></span></div><h2 data-i18n="hours">Horarios</h2><div id="hours-list" class="hours-list"></div></article>
+        <article class="info-card" id="contacto"><p class="eyebrow" data-i18n="talk">Hablemos</p><h2 data-i18n="contactTitle">Contáctanos</h2><div class="contact-list"><a id="contact-whatsapp" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>096 785 0030</strong></a><a href="tel:072883677"><span data-i18n="phone">Teléfono</span><strong>072 883 677</strong></a><a href="mailto:lacasadelmariscocuenca@gmail.com"><span>Email</span><strong>lacasadelmariscocuenca@gmail.com</strong></a><a id="contact-address" target="_blank" rel="noopener noreferrer"><span data-i18n="addressLabel">Dirección</span><strong>Paucarbamba 5-09 y Luis Moreno Mora (Esq.)</strong></a></div></article>
+      </section>
+
+      <section class="section card-actions" aria-label="Guardar y compartir tarjeta" data-i18n-aria="saveShareLabel">
+        <button class="card-action-button card-action-primary" id="save-contact" type="button"><span aria-hidden="true">💾</span><strong data-i18n="saveContact">GUARDAR TARJETA</strong><small data-i18n="addContacts">Agregar a tus contactos</small></button>
+        <button class="card-action-button" id="share-card" type="button"><span aria-hidden="true">↗</span><strong data-i18n="share">COMPARTIR</strong><small data-i18n="sendCard">Enviar esta tarjeta</small></button>
+      </section>
+
+      <section class="section qr-section"><div class="qr-placeholder" id="qr-placeholder" aria-label="Código QR definitivo pendiente de URL pública" data-i18n-aria="qrLabel"><div class="qr-grid"></div><p id="qr-status"></p></div><div><p class="eyebrow" data-i18n="saveUs">Guárdanos</p><h2 data-i18n="scanMe">Escanéame</h2><p data-i18n="qrPending">Disponible cuando confirmemos la URL pública de esta tarjeta.</p></div></section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <nav class="bottom-nav" aria-label="Navegación inferior" data-i18n-aria="bottomNavigation">
+      <a href="#inicio"><span>⌂</span><small data-i18n="home">Inicio</small></a>
+      <a href="#menu"><span>♨</span><small data-i18n="menu">Menú</small></a>
+      <a href="ordenar/"><span>🛒</span><small data-i18n="order">Ordenar</small></a>
+      <a id="bottom-location" target="_blank" rel="noopener noreferrer"><span>⌖</span><small data-i18n="location">Ubicación</small></a>
+      <button id="share-button"><span>⌁</span><small data-i18n="share">Compartir</small></button>
+    </nav>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

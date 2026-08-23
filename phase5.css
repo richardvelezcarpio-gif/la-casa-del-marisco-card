@@ -1,0 +1,25 @@
+.social-row button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: left;
+}
+.social-icon { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; color: #fff; font-size: 22px; font-weight: 800; }
+.instagram-icon { background: linear-gradient(135deg, #7d34c4, #e63279 55%, #f6a33b); }
+.facebook-icon { background: #1877f2; font-family: Arial, sans-serif; }
+.tiktok-icon { background: #090909; text-shadow: -2px 0 #25f4ee, 2px 0 #fe2c55; }
+.order-cta { position: relative; overflow: hidden; display: grid; justify-items: center; text-align: center; padding: 76px 24px; margin-top: 98px; border: 1px solid var(--line); border-radius: 28px; background: radial-gradient(circle at 50% 0, rgba(244,196,48,.18), transparent 45%), linear-gradient(145deg, #191713, #080808); box-shadow: 0 26px 70px rgba(0,0,0,.38); }
+.order-cta h2 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(58px,11vw,102px); line-height: .9; color: var(--gold-2); }
+.order-cta > p:not(.eyebrow) { max-width: 590px; margin: 18px 0 28px; color: var(--muted); font-size: 17px; }
+.order-cta-button { display: inline-flex; align-items: center; justify-content: center; min-height: 62px; padding: 0 34px; border-radius: 16px; background: linear-gradient(135deg,#ffe56b,#e8a900); color: #080808; text-decoration: none; font-weight: 900; box-shadow: 0 14px 35px rgba(244,196,48,.18); }
+.order-cta-button:visited { color: #080808; }
+.order-cta-button:hover, .order-cta-button:focus-visible { color: #080808; filter: brightness(1.08); }
+.order-cta small { margin-top: 18px; color: var(--white); font-weight: 700; letter-spacing: .06em; }
+.order-cta small i { display: inline-block; width: 5px; height: 5px; margin: 0 8px; border-radius: 50%; background: var(--gold); vertical-align: middle; }
+@media (max-width: 430px) {
+  .order-cta { width: calc(100% - 20px); padding: 58px 16px; margin-top: 78px; }
+  .order-cta > p:not(.eyebrow) { font-size: 15px; }
+  .order-cta-button { width: 100%; padding-inline: 18px; }
+  .social-row button { justify-content: flex-start; padding-inline: 20px; }
+}

@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+.next/
+.cache/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*~
+
+# Editors
+.vscode/
+.idea/
