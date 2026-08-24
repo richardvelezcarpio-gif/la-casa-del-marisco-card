@@ -9,10 +9,9 @@ export function createRestaurantVCard(restaurant) {
     `FN:${escapeVCard(restaurant.restaurantName)}`,
     `ORG:${escapeVCard(restaurant.restaurantName)}`,
     `TEL;TYPE=CELL:${escapeVCard(restaurant.phoneVCardDisplay)}`,
-    `TEL;TYPE=VOICE:${escapeVCard(restaurant.secondaryPhoneDisplay)}`,
-    `EMAIL;TYPE=INTERNET:${escapeVCard(restaurant.email)}`,
-    `ADR;TYPE=WORK:;;${escapeVCard(restaurant.address)};;;;`
+    `EMAIL;TYPE=INTERNET:${escapeVCard(restaurant.email)}`
   ];
+  if (restaurant.address) lines.push(`ADR;TYPE=WORK:;;${escapeVCard(restaurant.address)};;;;`);
   if (restaurant.publicCardUrl) lines.push(`URL:${escapeVCard(restaurant.publicCardUrl)}`);
   lines.push("END:VCARD");
   return `${lines.join("\r\n")}\r\n`;
