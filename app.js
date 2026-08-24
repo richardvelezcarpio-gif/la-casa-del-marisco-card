@@ -151,6 +151,17 @@ $$('[data-placeholder]').forEach(button => button.addEventListener("click", () =
 $("#share-button").addEventListener("click", shareCard);
 $("#share-card").addEventListener("click", shareCard);
 $("#save-contact").addEventListener("click", saveContactCard);
+const contactToggle = $("#contact-toggle");
+const contactList = $("#contact-list");
+function setContactExpanded(expanded) {
+  contactToggle.setAttribute("aria-expanded", String(expanded));
+  contactList.hidden = !expanded;
+  $("#contacto").classList.toggle("contact-open", expanded);
+}
+contactToggle.addEventListener("click", () => {
+  setContactExpanded(contactToggle.getAttribute("aria-expanded") !== "true");
+});
+setContactExpanded(false);
 $("#cart-items")?.addEventListener("click", event => { const button = event.target.closest("[data-cart]"); if (!button) return; const index = Number(button.dataset.index); if (button.dataset.cart === "plus") cart[index].quantity++; if (button.dataset.cart === "minus") cart[index].quantity = Math.max(1, cart[index].quantity-1); if (button.dataset.cart === "remove") cart.splice(index,1); renderCart(); });
 $("#send-whatsapp")?.addEventListener("click", sendWhatsApp);
 $("#prev-page")?.addEventListener("click", () => updatePdfPage(currentPdfPage - 1));
