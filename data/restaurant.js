@@ -1,5 +1,6 @@
 const whatsapp = "593967850030";
 const address = "Paucarbamba 5-09 y Luis Moreno Mora (Esq.)";
+const officialUrl = "https://www.lacasadelmarisco.online";
 const reservationMessage = `Hola, quisiera reservar una mesa en La Casa del Marisco.\n\nNombre:\nFecha:\nHora:\nNúmero de personas:`;
 
 export const restaurant = {
@@ -21,13 +22,13 @@ export const restaurant = {
   googleReviewCount: 518,
   googleReviewsUrl: "https://www.google.com/search?q=google+la+casa+del+marisco+cuenca&oq=google+la+casa+del+marisco+cuenca&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEJMTI4MzVqMGo0qAIAsAIB&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x91cd1868525f6f0f:0x46dd16c111afd654,3,,,,",
   reservationUrl: `https://wa.me/${whatsapp}?text=${encodeURIComponent(reservationMessage)}`,
-  websiteUrl: null,
+  websiteUrl: officialUrl,
   instagramUrl: "https://www.instagram.com/la_casa_del_marisco/",
   facebookUrl: "https://www.facebook.com/lacasadelmariscocuenca",
   tiktokUrl: "https://www.tiktok.com/@lacasadelmarisco_cuenca?is_from_webapp=1&sender_device=pc",
   youtubeUrl: null,
-  publicCardUrl: null,
-  publicUrl: null,
+  publicCardUrl: officialUrl,
+  publicUrl: officialUrl,
   menuPdfUrl: "public/menu/menu-la-casa-del-marisco.pdf",
   menuPdf: "public/menu/menu-la-casa-del-marisco.pdf",
   menuPdfByLanguage: { es: "public/menu/menu-la-casa-del-marisco.pdf", en: null },
@@ -47,6 +48,6 @@ export const restaurant = {
     reservations: `https://wa.me/${whatsapp}?text=${encodeURIComponent(reservationMessage)}`,
     directions: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`La Casa del Marisco, ${address}`)}`,
     reviews: null,
-    website: null
+    website: officialUrl
   }
 };

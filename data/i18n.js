@@ -17,7 +17,8 @@ export const translations = {
     phone: "Teléfono", addressLabel: "Dirección", saveShareLabel: "Guardar y compartir tarjeta",
     saveContact: "GUARDAR TARJETA", addContacts: "Agregar a tus contactos", share: "COMPARTIR",
     sendCard: "Enviar esta tarjeta", saveUs: "Guárdanos", scanMe: "Escanéame",
-    qrPending: "Disponible cuando confirmemos la URL pública de esta tarjeta.", location: "Ubicación",
+    qrPending: "Disponible cuando confirmemos la URL pública de esta tarjeta.", scanConnect: "ESCANEA Y CONECTA", accessDigitalCard: "Accede a nuestra tarjeta digital", location: "Ubicación",
+    footerRights: "© 2026 La Casa del Marisco. Todos los derechos reservados.", footerCreatedBy: "Creado por",
     openNow: "Abierto ahora", closed: "Cerrado", linkPending: "Enlace pendiente de confirmación.",
     reviewPending: "Enlace directo de Google Reviews pendiente.", copied: "✓ Enlace copiado",
     copyFailed: "No se pudo copiar el enlace.", contactReady: "✓ Tarjeta lista para guardar",
@@ -52,7 +53,7 @@ export const translations = {
     mainHeader: "Cabecera principal", mainActions: "Acciones principales", socialNetworks: "Redes sociales",
     bottomNavigation: "Navegación inferior", heroAlt: "Composición promocional de mariscos",
     shrimpAlt: "Plato de camarones de La Casa del Marisco", crabAlt: "Plato de cangrejo de La Casa del Marisco",
-    soupAlt: "Sopa marinera de La Casa del Marisco", qrLabel: "Código QR definitivo pendiente de URL pública",
+    soupAlt: "Sopa marinera de La Casa del Marisco", qrLabel: "Código QR hacia la tarjeta digital oficial",
     homeDescription: "Tarjeta digital de La Casa del Marisco Restaurant.", orderDescription: "Ordena el menú real de La Casa del Marisco por WhatsApp."
   },
   en: {
@@ -70,7 +71,8 @@ export const translations = {
     phone: "Phone", addressLabel: "Address", saveShareLabel: "Save and share contact",
     saveContact: "SAVE CONTACT", addContacts: "Add to your contacts", share: "SHARE",
     sendCard: "Send this card", saveUs: "Save our contact", scanMe: "Scan me",
-    qrPending: "Available once the public URL for this card is confirmed.", location: "Location",
+    qrPending: "Available once the public URL for this card is confirmed.", scanConnect: "SCAN & CONNECT", accessDigitalCard: "Access our digital card", location: "Location",
+    footerRights: "© 2026 La Casa del Marisco. All rights reserved.", footerCreatedBy: "Created by",
     openNow: "Open now", closed: "Closed", linkPending: "Link pending confirmation.",
     reviewPending: "Direct Google Reviews link pending.", copied: "✓ Link copied",
     copyFailed: "The link could not be copied.", contactReady: "✓ Contact ready to save",
@@ -105,7 +107,7 @@ export const translations = {
     mainHeader: "Main header", mainActions: "Main actions", socialNetworks: "Social media",
     bottomNavigation: "Bottom navigation", heroAlt: "Promotional seafood presentation",
     shrimpAlt: "Shrimp dish from La Casa del Marisco", crabAlt: "Crab dish from La Casa del Marisco",
-    soupAlt: "Seafood soup from La Casa del Marisco", qrLabel: "Final QR code pending a public URL",
+    soupAlt: "Seafood soup from La Casa del Marisco", qrLabel: "QR code to the official digital card",
     homeDescription: "Digital card for La Casa del Marisco Restaurant.", orderDescription: "Order from the real La Casa del Marisco menu via WhatsApp."
   }
 };

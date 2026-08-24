@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="phase10.css" />
     <link rel="stylesheet" href="phase11.css" />
     <link rel="stylesheet" href="phase12.css" />
+    <link rel="stylesheet" href="phase13.css" />
+    <link rel="stylesheet" href="phase14.css" />
   </head>
   <body>
     <div class="ambient ambient-one"></div>
@@ -126,8 +128,13 @@
         <button class="card-action-button" id="share-card" type="button"><span aria-hidden="true">↗</span><strong data-i18n="share">COMPARTIR</strong><small data-i18n="sendCard">Enviar esta tarjeta</small></button>
       </section>
 
-      <section class="section qr-section"><div class="qr-placeholder" id="qr-placeholder" aria-label="Código QR definitivo pendiente de URL pública" data-i18n-aria="qrLabel"><div class="qr-grid"></div><p id="qr-status"></p></div><div><p class="eyebrow" data-i18n="saveUs">Guárdanos</p><h2 data-i18n="scanMe">Escanéame</h2><p data-i18n="qrPending">Disponible cuando confirmemos la URL pública de esta tarjeta.</p></div></section>
+      <section class="section qr-section"><div class="qr-placeholder" id="qr-placeholder" aria-label="Código QR hacia la tarjeta digital oficial" data-i18n-aria="qrLabel"><img src="assets/brand/qr-lacasadelmarisco.svg" alt="" width="1024" height="1024" /></div><div class="qr-copy"><h2 data-i18n="scanConnect">ESCANEA Y CONECTA</h2><p id="qr-status" data-i18n="accessDigitalCard">Accede a nuestra tarjeta digital</p></div></section>
     </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footerRights">© 2026 La Casa del Marisco. Todos los derechos reservados.</p>
+      <p><span data-i18n="footerCreatedBy">Creado por</span> <a href="https://www.nextstudio.agency" target="_blank" rel="noopener noreferrer">Next Studio Agency</a></p>
+    </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <nav class="bottom-nav" aria-label="Navegación inferior" data-i18n-aria="bottomNavigation">

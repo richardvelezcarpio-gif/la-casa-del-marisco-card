@@ -1,0 +1,94 @@
+.qr-section {
+  position: relative;
+  width: min(880px, calc(100% - 32px));
+  min-height: 440px;
+  margin-top: 72px;
+  padding: 48px clamp(28px, 5vw, 62px) 118px;
+  display: grid;
+  grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(34px, 6vw, 68px);
+  border: 1px solid rgba(244, 196, 48, .38);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 23% 44%, rgba(244, 196, 48, .09), transparent 38%),
+    linear-gradient(145deg, #15130e, #070706 62%, #0b0905);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .46), inset 0 1px rgba(255, 239, 177, .06);
+  overflow: hidden;
+}
+
+.qr-section::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 78px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 196, 48, .6), transparent);
+  box-shadow: 0 0 10px rgba(244, 196, 48, .25);
+}
+
+.qr-placeholder {
+  width: min(290px, 100%);
+  aspect-ratio: 1;
+  padding: 13px;
+  display: block;
+  border: 3px solid #f4c430;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .46), 0 0 20px rgba(244, 196, 48, .14);
+}
+
+.qr-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  image-rendering: pixelated;
+}
+
+.qr-copy { position: relative; z-index: 1; }
+.qr-copy h2 {
+  max-width: 430px;
+  margin: 0;
+  color: #ffe279;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 6vw, 76px);
+  font-style: italic;
+  line-height: .92;
+  text-shadow: 0 4px 24px rgba(244, 196, 48, .16);
+}
+.qr-copy p {
+  max-width: 380px;
+  margin: 18px 0 0;
+  color: #d0cbc1;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .qr-section {
+    width: calc(100% - 20px);
+    min-height: 0;
+    margin-top: 58px;
+    padding: 34px 20px 112px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 26px;
+    text-align: center;
+    border-radius: 26px;
+  }
+  .qr-placeholder { width: min(272px, 78vw); padding: 11px; border-radius: 21px; }
+  .qr-copy h2 { font-size: clamp(44px, 13vw, 60px); }
+  .qr-copy p { margin-top: 11px; font-size: 14px; }
+  .qr-section::after { bottom: 78px; }
+}
+
+@media (max-width: 390px) {
+  .qr-placeholder { width: min(252px, 76vw); }
+  .qr-section { padding-inline: 16px; }
+}
