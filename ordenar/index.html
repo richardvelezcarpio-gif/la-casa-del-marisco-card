@@ -26,7 +26,7 @@
         <p class="eyebrow" data-i18n="deliveryPickup">Delivery / Pickup</p>
         <h1 data-i18n="orderTitle">Ordena por WhatsApp</h1>
         <p data-i18n="orderIntro">Selecciona tus platos favoritos y envíanos tu pedido.</p>
-        <div class="service-pills"><span>Pickup</span><i></i><span>Delivery</span><i></i><span>WhatsApp</span></div>
+        <div class="service-pills"><span data-i18n="pickup">Recoger</span><i></i><span data-i18n="delivery">Entrega a domicilio</span><i></i><span>WhatsApp</span></div>
         <label class="search-field" for="dish-search"><span aria-hidden="true">⌕</span><input id="dish-search" type="search" placeholder="Buscar plato..." data-i18n-placeholder="searchPlaceholder" autocomplete="off" /><button type="button" id="clear-search" aria-label="Limpiar búsqueda" data-i18n-aria="clearSearch" hidden>×</button></label>
       </section>
 
@@ -50,11 +50,13 @@
         <div class="form-section-title"><span>1</span><div><h3 data-i18n="yourInfo">Tu información</h3><p data-i18n="identifyOrder">Datos para identificar tu pedido</p></div></div>
         <label for="customer-name"><span data-i18n="name">Nombre</span> <span>*</span></label>
         <input id="customer-name" name="name" autocomplete="name" required placeholder="Tu nombre" data-i18n-placeholder="yourName" />
+        <label for="customer-phone"><span data-i18n="phone">Teléfono</span> <span>*</span></label>
+        <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required placeholder="Tu teléfono" data-i18n-placeholder="yourPhone" />
         <div class="form-section-title"><span>2</span><div><h3 data-i18n="receiveOrder">¿Cómo deseas recibir tu orden?</h3></div></div>
         <fieldset>
           <legend><span data-i18n="orderType">Tipo de orden</span> <span>*</span></legend>
-          <label class="radio-card"><input type="radio" name="orderType" value="Pickup" required /><span>🏪 Pickup</span></label>
-          <label class="radio-card"><input type="radio" name="orderType" value="Delivery" required /><span>🛵 Delivery</span></label>
+          <label class="radio-card"><input type="radio" name="orderType" value="Pickup" required /><span>🏪 <b data-i18n="pickup">Recoger</b></span></label>
+          <label class="radio-card"><input type="radio" name="orderType" value="Delivery" required /><span>🛵 <b data-i18n="delivery">Entrega a domicilio</b></span></label>
         </fieldset>
         <div id="delivery-field" hidden><label for="delivery-address"><span data-i18n="deliveryAddress">Dirección de entrega</span> <span>*</span></label><textarea id="delivery-address" rows="3" placeholder="Escribe la dirección completa" data-i18n-placeholder="fullAddress"></textarea></div>
         <label for="order-notes" data-i18n="restaurantNotes">Notas para el restaurante</label>
@@ -70,7 +72,9 @@
     <section class="confirm-sheet" id="confirm-sheet" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-hidden="true">
       <span class="confirm-check">✓</span><p class="eyebrow" data-i18n="allReady">Todo preparado</p><h2 id="confirm-title" data-i18n="orderReady">Tu orden está lista</h2>
       <p id="confirm-summary"></p><strong id="confirm-total"></strong><p id="confirm-type"></p>
-      <button id="confirm-send" class="send-button" data-i18n="sendWhatsapp">Enviar por WhatsApp</button><button id="continue-editing" class="continue-button" data-i18n="continueEditing">Seguir editando</button>
+      <button id="confirm-send" class="send-button" data-i18n="sendWhatsapp">Enviar Pedido por WhatsApp</button>
+      <div class="information-contact"><p data-i18n="informationPrompt">¿Necesitas información?</p><a id="information-call" class="information-button" href="tel:+593986727442" data-i18n="callInformation">Llamar para Información</a></div>
+      <button id="continue-editing" class="continue-button" data-i18n="continueEditing">Seguir editando</button>
     </section>
 
     <nav class="bottom-nav" aria-label="Navegación inferior" data-i18n-aria="bottomNavigation">

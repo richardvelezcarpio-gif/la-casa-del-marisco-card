@@ -90,15 +90,15 @@ function renderCart() {
 
 function openCart(open=true) { $("#cart-drawer").classList.toggle("open",open); $("#cart-drawer").setAttribute("aria-hidden",!open); $("#cart-backdrop").classList.toggle("open",open); document.body.classList.toggle("cart-open",open); if(open) $("#close-cart").focus(); }
 
-export function buildWhatsAppMessage({ name, type, address="", notes="" }) {
+export function buildWhatsAppMessage({ name, phone, type, address="", notes="" }) {
   const localizedCart=cart.map(item=>{const product=productById(item.productId);return {...item,name:product?itemName(product):item.name,optionLabel:product?itemOption(product,item.optionIndex):optionLabel(item.optionLabel,language)};});
-  return createWhatsAppMessage(localizedCart, { name, type, address, notes }, language);
+  return createWhatsAppMessage(localizedCart, { name, phone, type, address, notes }, language);
 }
 
 function validateCheckout() {
-  const name=$("#customer-name").value.trim(); const type=$("input[name=orderType]:checked")?.value; const address=$("#delivery-address").value.trim(); const notes=$("#order-notes").value.trim();
-  if(!cart.length) return { error:t(language,"addAtLeastOne") }; if(!name) return { error:t(language,"enterName") }; if(!type) return { error:t(language,"selectOrderType") }; if(type==="Delivery"&&!address) return { error:t(language,"enterAddress") };
-  return { name,type,address,notes };
+  const name=$("#customer-name").value.trim(); const phone=$("#customer-phone").value.trim(); const type=$("input[name=orderType]:checked")?.value; const address=$("#delivery-address").value.trim(); const notes=$("#order-notes").value.trim();
+  if(!cart.length) return { error:t(language,"addAtLeastOne") }; if(!name) return { error:t(language,"enterName") }; if(!phone) return { error:t(language,"enterPhone") }; if(!type) return { error:t(language,"selectOrderType") }; if(type==="Delivery"&&!address) return { error:t(language,"enterAddress") };
+  return { name,phone,type,address,notes };
 }
 
 $("#category-nav").addEventListener("click",event=>{const button=event.target.closest("[data-category]");if(!button)return;document.querySelectorAll("#category-nav button").forEach(item=>item.classList.toggle("active",item===button));const slug=normalize(button.dataset.category).replace(/[^a-z0-9]+/g,"-");document.getElementById(`cat-${slug}`)?.scrollIntoView({behavior:"smooth"});});
@@ -112,10 +112,12 @@ $("#order-location").href=restaurant.googleMapsUrl;$("#order-share").addEventLis
 $("#clear-cart").addEventListener("click",()=>{if(confirm(t(language,"clearOrderConfirm"))){cart=[];safeWriteCart();renderCart();}});
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&$("#cart-drawer").classList.contains("open"))openCart(false);});
 document.querySelectorAll('input[name="orderType"]').forEach(input=>input.addEventListener("change",()=>{$("#delivery-field").hidden=input.value!=="Delivery";$("#delivery-address").required=input.value==="Delivery";}));
-function openConfirmation(data){const message=buildWhatsAppMessage(data);pendingWhatsAppUrl=createWhatsAppUrl(restaurant.whatsappNumber,message);$("#confirm-summary").textContent=`${itemCount()} ${itemCount()===1?t(language,"product"):t(language,"products")}`;$("#confirm-total").textContent=`${t(language,"total")} ${money(totalCents())}`;$("#confirm-type").textContent=data.type;$("#confirm-sheet").classList.add("open");$("#confirm-sheet").setAttribute("aria-hidden","false");$("#confirm-backdrop").classList.add("open");$("#confirm-send").focus();}
+function openConfirmation(data){const message=buildWhatsAppMessage(data);pendingWhatsAppUrl=createWhatsAppUrl(restaurant.whatsappNumber,message);$("#confirm-summary").textContent=`${itemCount()} ${itemCount()===1?t(language,"product"):t(language,"products")}`;$("#confirm-total").textContent=`${t(language,"total")} ${money(totalCents())}`;$("#confirm-type").textContent=t(language,data.type==="Delivery"?"delivery":"pickup");$("#confirm-sheet").classList.add("open");$("#confirm-sheet").setAttribute("aria-hidden","false");$("#confirm-backdrop").classList.add("open");$("#confirm-send").focus();}
 function closeConfirmation(){$("#confirm-sheet").classList.remove("open");$("#confirm-sheet").setAttribute("aria-hidden","true");$("#confirm-backdrop").classList.remove("open");pendingWhatsAppUrl="";}
 $("#checkout-form").addEventListener("submit",event=>{event.preventDefault();const data=validateCheckout();if(data.error){$("#form-error").textContent=data.error;return;}$("#form-error").textContent="";openConfirmation(data);});
 $("#continue-editing").addEventListener("click",closeConfirmation);$("#confirm-backdrop").addEventListener("click",closeConfirmation);$("#confirm-send").addEventListener("click",()=>{if(pendingWhatsAppUrl)window.open(pendingWhatsAppUrl,"_blank","noopener,noreferrer");});
 document.querySelectorAll("[data-lang]").forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.lang)));
+
+$("#information-call").href=`tel:${restaurant.informationPhoneInternational}`;
 
 setLanguage(language);

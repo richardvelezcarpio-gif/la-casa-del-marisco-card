@@ -1,4 +1,5 @@
 const whatsapp = "593967850030";
+const informationWhatsapp = "593986727442";
 const officialUrl = "https://www.lacasadelmarisco.online";
 const googleMapsUrl = "https://maps.app.goo.gl/BUbUZvjgFkPxHN5S7?g_st=awb";
 const reservationMessage = `Hola, quisiera reservar una mesa en La Casa del Marisco.\n\nNombre:\nFecha:\nHora:\nNúmero de personas:`;
@@ -12,6 +13,9 @@ export const restaurant = {
   phoneVCardDisplay: "+593 96 785 0030",
   whatsapp: whatsapp,
   whatsappNumber: whatsapp,
+  informationPhoneDisplay: "0986727442",
+  informationPhoneInternational: "+593986727442",
+  informationWhatsappNumber: informationWhatsapp,
   email: "lacasadelmariscocuenca@gmail.com",
   address: null,
   timezone: "America/Guayaquil",
@@ -33,7 +37,7 @@ export const restaurant = {
   hours: [
     ["Sábado", "09:00 – 21:00"], ["Domingo", "09:00 – 18:00"],
     ["Lunes", "10:00 – 20:00"], ["Martes", "10:00 – 20:00"],
-    ["Miércoles", "10:00 – 20:00"], ["Jueves", "09:00 – 18:00"],
+    ["Miércoles", "10:00 – 20:00"], ["Jueves", "10:00 AM – 8:00 PM"],
     ["Viernes", "09:00 – 21:00"]
   ],
   socials: {

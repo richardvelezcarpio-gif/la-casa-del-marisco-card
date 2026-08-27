@@ -29,8 +29,8 @@ function setLanguage(lang) {
 function showToast(message, duration = 2800) { const toast = $("#toast"); toast.textContent = message; toast.classList.add("show"); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove("show"), duration); }
 function toggleDrawer(open) { $("#drawer").classList.toggle("open", open); $("#drawer").setAttribute("aria-hidden", !open); $("#drawer-backdrop").classList.toggle("open", open); $("#menu-toggle").setAttribute("aria-expanded", open); document.body.classList.toggle("drawer-open", open); }
 
-function whatsappUrl(message = "") {
-  return "https://wa.me/" + restaurant.whatsappNumber + (message ? "?text=" + encodeURIComponent(message) : "");
+function whatsappUrl(message = "", number = restaurant.informationWhatsappNumber) {
+  return "https://wa.me/" + number + (message ? "?text=" + encodeURIComponent(message) : "");
 }
 
 async function copyLink(url) {
@@ -66,6 +66,7 @@ function renderHours() { $("#hours-list").innerHTML = restaurant.hours.map(([day
 function updateLanguageLinks() {
   $("#reservation-link").href = reservationUrl();
   $("#general-whatsapp").href = whatsappUrl(t(language, "generalWhatsappMessage"));
+  $("#information-call").href = `tel:${restaurant.informationPhoneInternational}`;
 }
 
 function updateOpenStatus() {
@@ -77,7 +78,16 @@ function updateOpenStatus() {
   const currentMinutes = Number(parts.hour) * 60 + Number(parts.minute);
   let isOpen = false;
   if (entry) {
-    const [start,end] = entry[1].split(/\s*[–-]\s*/).map(value => { const [hour,minute] = value.split(":").map(Number); return hour * 60 + minute; });
+    const [start,end] = entry[1].split(/\s*[–-]\s*/).map(value => {
+      const match = value.match(/^(\d{1,2}):(\d{2})(?:\s*(AM|PM))?$/i);
+      if (!match) return NaN;
+      let hour = Number(match[1]);
+      const minute = Number(match[2]);
+      const period = match[3]?.toUpperCase();
+      if (period === "AM" && hour === 12) hour = 0;
+      if (period === "PM" && hour !== 12) hour += 12;
+      return hour * 60 + minute;
+    });
     isOpen = currentMinutes >= start && currentMinutes < end;
   }
   const status = $("#open-status");
@@ -110,7 +120,7 @@ function sendWhatsApp() {
   if (!cart.length) return;
   const lines = cart.map(item => `${item.quantity} × ${item.name}${item.option ? ` — ${item.option}` : ""} — ${money.format(item.price * item.quantity)}`);
   const total = cart.reduce((sum,item) => sum + item.price * item.quantity, 0); const notes = $("#order-notes").value.trim() || "—";
-  const message = `Hola, quiero realizar la siguiente orden en ${restaurant.name}:\n\n${lines.join("\n")}\n\nTotal: ${money.format(total)}\n\nNotas:\n${notes}\n\nNombre:\nPickup / Delivery:`;
+  const message = `${t(language, "waGreeting")}\n\n${lines.join("\n")}\n\n${t(language, "waTotal")}: ${money.format(total)}\n\n${t(language, "waNotes")}:\n${notes}\n\n${t(language, "waName")}:\n${t(language, "waType")}:`;
   window.open(`https://wa.me/${restaurant.whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
 }
 

@@ -543,6 +543,32 @@ body {
   color: var(--white);
 }
 
+.information-contact {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.information-contact p {
+  margin: 0 0 9px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.information-button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(244, 196, 48, 0.52);
+  border-radius: 13px;
+  background: transparent;
+  color: var(--premium-gold);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 @media (max-width: 650px) {
   .cart-drawer {
     top: auto;
