@@ -55,7 +55,7 @@ export const translations = {
     bottomNavigation: "Navegación inferior", heroAlt: "Composición promocional de mariscos",
     shrimpAlt: "Plato de camarones de La Casa del Marisco", crabAlt: "Plato de cangrejo de La Casa del Marisco",
     soupAlt: "Sopa marinera de La Casa del Marisco", qrLabel: "Código QR hacia la tarjeta digital oficial",
-    homeDescription: "Tarjeta digital de La Casa del Marisco Restaurant.", orderDescription: "Ordena el menú real de La Casa del Marisco por WhatsApp."
+    homeDescription: "Todo La Casa del Marisco en un solo lugar. Consulta nuestro menú, reserva tu mesa, haz tu pedido por WhatsApp, encuentra nuestra ubicación y contáctanos fácilmente.", orderDescription: "Ordena el menú real de La Casa del Marisco por WhatsApp."
   },
   en: {
     home: "Home", menu: "Menu", order: "Order", hours: "Hours", contact: "Contact",
@@ -110,7 +110,7 @@ export const translations = {
     bottomNavigation: "Bottom navigation", heroAlt: "Promotional seafood presentation",
     shrimpAlt: "Shrimp dish from La Casa del Marisco", crabAlt: "Crab dish from La Casa del Marisco",
     soupAlt: "Seafood soup from La Casa del Marisco", qrLabel: "QR code to the official digital card",
-    homeDescription: "Digital card for La Casa del Marisco Restaurant.", orderDescription: "Order from the real La Casa del Marisco menu via WhatsApp."
+    homeDescription: "Everything from La Casa del Marisco in one place. View our menu, reserve your table, order via WhatsApp, find our location and contact us easily.", orderDescription: "Order from the real La Casa del Marisco menu via WhatsApp."
   }
 };
 

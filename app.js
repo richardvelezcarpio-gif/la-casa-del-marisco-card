@@ -20,7 +20,7 @@ function setLanguage(lang) {
   $$('[data-i18n-aria]').forEach(node => node.setAttribute("aria-label", t(lang, node.dataset.i18nAria)));
   $$('[data-i18n-alt]').forEach(node => node.alt = t(lang, node.dataset.i18nAlt));
   document.querySelector('meta[name="description"]').content = t(lang, "homeDescription");
-  document.title = "La Casa del Marisco";
+  document.title = "La Casa del Marisco | Tarjeta Digital";
   renderHours(); updateOpenStatus(); updateLanguageLinks();
   if ($("#page-status")) $("#page-status").textContent = `${lang === "es" ? "Página" : "Page"} ${currentPdfPage} / ${totalPdfPages}`;
   renderCart();

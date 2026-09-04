@@ -4,6 +4,10 @@
   "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/social/:path*",
+      "destination": "/public/social/:path*"
+    },
+    {
       "source": "/",
       "destination": "/index.html"
     },
